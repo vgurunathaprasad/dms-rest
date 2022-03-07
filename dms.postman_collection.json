@@ -1,0 +1,266 @@
+{
+	"variables": [],
+	"info": {
+		"name": "dms",
+		"_postman_id": "7265e420-1219-8f9e-84f3-516094c08b9c",
+		"description": "dms api testing",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "access without token",
+			"request": {
+				"url": "http://localhost:4001/welcome",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "user registration",
+			"request": {
+				"url": "http://localhost:4001/register",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"first_name\":\"vishnu\",\n\t\"last_name\":\"prasad\",\n\t\"email\":\"vishnu@abc.com\",\n\t\"password\":\"qwerty\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "user login",
+			"request": {
+				"url": "http://localhost:4001/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\":\"vishnu@abc.com\",\n\t\"password\":\"qwerty\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "access with token",
+			"request": {
+				"url": "http://localhost:4001/welcome",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjIyNTg0ZGNkYmJkODlhNzhhYjEyY2M1IiwiZW1haWwiOiJ2aXNobnVAYWJjLmNvbSIsImlhdCI6MTY0NjYyNjIxNSwiZXhwIjoxNjQ2NjMzNDE1fQ.ElfX58Qs-ifMdcli2-6iGTW71X3PI3c1rHLrTjN1I7s",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "fetch all files",
+			"request": {
+				"url": "http://localhost:4001/files",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjIyNTg0ZGNkYmJkODlhNzhhYjEyY2M1IiwiZW1haWwiOiJ2aXNobnVAYWJjLmNvbSIsImlhdCI6MTY0NjY0OTY3MywiZXhwIjoxNjQ2NjU2ODczfQ.BSSr9OLsikYCPgv05_Tiabo7-mAOuqLJFel5-TXiWb0",
+						"description": ""
+					},
+					{
+						"key": "uid",
+						"value": "622584dcdbbd89a78ab12cc5",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "fetch all folders",
+			"request": {
+				"url": "http://localhost:4001/folders",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjIyNTg0ZGNkYmJkODlhNzhhYjEyY2M1IiwiZW1haWwiOiJ2aXNobnVAYWJjLmNvbSIsImlhdCI6MTY0NjYyNjIxNSwiZXhwIjoxNjQ2NjMzNDE1fQ.ElfX58Qs-ifMdcli2-6iGTW71X3PI3c1rHLrTjN1I7s",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "fetch all in order",
+			"request": {
+				"url": "http://localhost:4001/files/allinorder",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjIyNTg0ZGNkYmJkODlhNzhhYjEyY2M1IiwiZW1haWwiOiJ2aXNobnVAYWJjLmNvbSIsImlhdCI6MTY0NjY0OTY3MywiZXhwIjoxNjQ2NjU2ODczfQ.BSSr9OLsikYCPgv05_Tiabo7-mAOuqLJFel5-TXiWb0",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "create file",
+			"request": {
+				"url": "http://localhost:4001/files",
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjIyNTg0ZGNkYmJkODlhNzhhYjEyY2M1IiwiZW1haWwiOiJ2aXNobnVAYWJjLmNvbSIsImlhdCI6MTY0NjY0OTY3MywiZXhwIjoxNjQ2NjU2ODczfQ.BSSr9OLsikYCPgv05_Tiabo7-mAOuqLJFel5-TXiWb0",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\":\"file2\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get all folder of the user",
+			"request": {
+				"url": "http://localhost:4001/folder",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "change file content",
+			"request": {
+				"url": "http://localhost:4001/files/changecontnet/6225e2957734db3e313f09e9",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"content\":\"new content\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get file by id",
+			"request": {
+				"url": "http://localhost:4001/files/6225e2957734db3e313f09e9",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "delete file by id",
+			"request": {
+				"url": "http://localhost:4001/files/6225e2957734db3e313f09e9",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get folder by id",
+			"request": {
+				"url": "http://localhost:4001/folders/id",
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "delete folder by id",
+			"request": {
+				"url": "http://localhost:4001/folders/id",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-access-token",
+						"value": "",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
